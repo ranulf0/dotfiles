@@ -29,4 +29,8 @@ return require('packer').startup(function(use)
     use {
         'bluz71/vim-moonfly-colors',
     }
+
+    use {
+        "danymat/neogen",
+    }
 end)
