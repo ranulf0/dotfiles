@@ -211,12 +211,12 @@ gaps outer 0
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # remove title bar
-default_border pixel 0
-default_floating_border pixel 0
+default_border pixel 1
+default_floating_border pixel 1
 
 # border color
 # class        border  backgr. text    indicator child_border
-#client.focused #FFFFFF #FFFFFF #000000 #FFFFFF   #FFFFFF
+client.focused #FFFFFF #FFFFFF #000000 #808080   #808080
 
 # toggle keyboard layout
 exec --no-startup-id 'setxkbmap us intl'
@@ -234,8 +234,8 @@ exec --no-startup-id bash -c 'xrandr | grep "HDMI-1 connected" && xrandr --outpu
 bindsym Mod4+L exec --no-startup-id "i3lock -c 000000"
 
 # wallpaper
-#exec --no-startup-id hsetroot -solid "#000000"
-exec --no-startup-id feh --bg-scale "$HOME/pictures/wallpaper.png"
+exec --no-startup-id hsetroot -solid "#000000"
+#exec --no-startup-id feh --bg-scale "$HOME/pictures/wallpaper.png"
 
 # go to workspace
 exec --no-startup-id i3-msg 'workspace 1'
@@ -254,4 +254,4 @@ bindsym XF86AudioNext exec --no-startup-id playerctl next
 bindsym XF86AudioPrev exec --no-startup-id playerctl previous
 
 # compositor
-exec --no-startup-id picom -b
+#exec --no-startup-id picom -b
