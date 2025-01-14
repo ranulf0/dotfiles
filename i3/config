@@ -244,8 +244,10 @@ exec --no-startup-id i3-msg 'workspace 1'
 bindsym $mod+d exec --no-startup-id "rofi -show drun -show-icons"
 
 # brightness
-bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 5
-bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 5
+#bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 5
+#bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 5
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +5%
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
 
 # media player
 bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
