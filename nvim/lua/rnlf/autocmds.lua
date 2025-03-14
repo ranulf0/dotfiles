@@ -13,3 +13,8 @@ autocmd("BufWritePre", {
   pattern = "*",
   command = "%s#\\($\\n\\s*\\)\\+\\%$##e"
 })
+
+vim.api.nvim_create_autocmd("VimResized", {
+    pattern = "*",
+    command = "wincmd =",
+})

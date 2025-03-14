@@ -18,3 +18,15 @@ vim.keymap.set("n", "<leader>h", ":vertical resize -2 <CR>")
 vim.keymap.set("n", "<leader>l", ":vertical resize +2 <CR>")
 
 vim.keymap.set("n", "p", "pg`]")
+
+local function enable_mouse_resize()
+    vim.o.mouse = "n"
+    vim.api.nvim_create_autocmd("CursorMoved", {
+        once = true,
+        callback = function()
+            vim.o.mouse = ""
+        end,
+    })
+end
+
+vim.keymap.set("n", "<Leader>r", enable_mouse_resize, { silent = true, noremap = true })
