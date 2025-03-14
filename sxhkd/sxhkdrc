@@ -1,0 +1,97 @@
+# Volume
+XF86AudioRaiseVolume
+    pactl set-sink-volume @DEFAULT_SINK@ +5%
+XF86AudioLowerVolume
+    pactl set-sink-volume @DEFAULT_SINK@ -5%
+XF86AudioMute
+    pactl set-sink-mute @DEFAULT_SINK@ toggle
+XF86AudioMicMute
+    pactl set-source-mute @DEFAULT_SOURCE@ toggle
+
+# Media player controls
+XF86AudioPlay
+    playerctl play-pause
+XF86AudioPause
+    playerctl play-pause
+XF86AudioNext
+    playerctl next
+XF86AudioPrev
+    playerctl previous
+
+# Brightness
+XF86MonBrightnessUp
+    brightnessctl set +5%
+XF86MonBrightnessDown
+    brightnessctl set 5%-
+
+# Terminal
+alt + Return
+    kitty
+
+# Kill focused window
+alt + q
+    bspc node -c
+
+# Change focus
+alt + {h, j, k, l}
+    bspc node -f {west, south, north, east}
+alt + {Left, Down, Up, Right}
+    bspc node -f {west, south, north, east}
+
+# Move focused window
+alt + shift + {h, j, k, l}
+    bspc node -s {west, south, north, east}
+alt + shift + {Left, Down, Up, Right}
+    bspc node -s {west, south, north, east}
+
+# Change layout
+alt + control + {h, j, k, l}
+    bspc node -p {west, south, north, east}
+alt + control + {Left, Down, Up, Right}
+    bspc node -p {west, south, north, east}
+
+# Toggle fullscreen
+alt + f
+    bspc node -t ~fullscreen
+
+# Toggle floating mode
+alt + shift + space
+    bspc node -t ~floating
+
+# Launch application menu (rofi)
+alt + d
+    rofi -show drun -show-icons
+
+# Workspace switching
+alt + {1-9,0}
+    bspc desktop -f {1-9,10}
+
+# Move focused window to workspace
+alt + shift + {1-9,0}
+    bspc node -d {1-9,10}
+
+# Restart bspwm
+alt + shift + r
+    pkill sxhkd; bspc wm -r; sxhkd &
+
+# Screenshot
+Print
+    maim | xclip -selection clipboard -t image/png
+control + Print
+    maim --select | xclip -selection clipboard -t image/png
+shift + Print
+    maim "$HOME/pictures/screenshot-$(date +'%Y-%m-%d_%H-%M-%S').png"
+shift + control + Print
+    maim --select "$HOME/pictures/screenshot-$(date +'%Y-%m-%d_%H-%M-%S').png"
+
+# Browser
+alt + {c, n}
+    firefox { , --private-window}
+
+# Keyboard layout
+super + space
+    setxkbmap -query | grep -q 'variant: *intl' && setxkbmap us || setxkbmap us intl
+
+# Lock screen
+super + l
+    i3lock -c 000000
