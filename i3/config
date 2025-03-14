@@ -223,12 +223,15 @@ exec --no-startup-id 'setxkbmap us intl'
 bindsym Mod4+space exec --no-startup-id "setxkbmap -query | grep -q 'variant: *intl' && setxkbmap us || setxkbmap us intl"
 
 # launch chrome
-bindsym $mod+c exec --no-startup-id "google-chrome-stable"
-bindsym $mod+n exec --no-startup-id "google-chrome-stable --incognito"
+#bindsym $mod+c exec --no-startup-id "google-chrome-stable"
+#bindsym $mod+n exec --no-startup-id "google-chrome-stable --incognito"
+bindsym $mod+c exec --no-startup-id "firefox"
+bindsym $mod+n exec --no-startup-id "firefox --private-window"
 
 # displays
 exec --no-startup-id xrandr --output HDMI-1 --mode 3440x1440 --rate 49.95
 exec --no-startup-id bash -c 'xrandr | grep "HDMI-1 connected" && xrandr --output HDMI-1 --mode 3440x1440 --rate 49.95 && xrandr --output eDP-1 --off && xrandr --output eDP-2 --off'
+exec --no-startup-id bash -c 'xrandr | grep "DP-3 connected" && xrandr --output DP-3 --mode 3440x1440 --rate 49.95 && xrandr --output eDP-1 --off && xrandr --output eDP-2 --off'
 
 # lock
 bindsym Mod4+L exec --no-startup-id "i3lock -c 000000"
@@ -256,4 +259,4 @@ bindsym XF86AudioNext exec --no-startup-id playerctl next
 bindsym XF86AudioPrev exec --no-startup-id playerctl previous
 
 # compositor
-#exec --no-startup-id picom -b
+exec --no-startup-id picom -b
