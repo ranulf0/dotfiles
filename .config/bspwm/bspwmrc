@@ -8,10 +8,11 @@ picom -b &
 
 # Set wallpaper
 hsetroot -solid "#000000" &
+feh --bg-scale "~/.config/wallpaper/wallpaper.png"
 xsetroot -cursor_name left_ptr &
 setxkbmap us intl &
 
-xrandr | grep "HDMI-1 connected" && xrandr --output HDMI-1 --mode 3440x1440 --rate 49.95 && xrandr --output eDP-1 --off && xrandr --output eDP-2 --off &
+xrandr | grep "HDMI-1 connected" && xrandr --output HDMI-1 --mode 3440x1440 --rate 49.95 --primary && xrandr --output eDP-1 --off && xrandr --output eDP-2 --off &
 
 # Start Polybar
 $HOME/.config/polybar/launch.sh &

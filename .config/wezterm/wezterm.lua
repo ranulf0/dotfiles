@@ -8,7 +8,7 @@ config.color_scheme = 'Catppuccin Mocha'
 
 config.font = wezterm.font 'Hack Nerd Font'
 
-config.window_background_opacity = 1.0
+config.window_background_opacity = 0.85
 
 -- config.tab_max_width = 40
 config.tab_bar_at_bottom = true
@@ -44,6 +44,5 @@ wezterm.on("format-tab-title", function(tab)
     { Text = " " .. title .. " " },
   }
 end)
-
 
 return config
