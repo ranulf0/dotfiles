@@ -23,7 +23,7 @@ nm-applet &
 xss-lock --transfer-sleep-lock -- i3lock -c 000000 --nofork &
 
 # Border settings
-bspc config border_width 2
+bspc config border_width 1
 bspc config normal_border_color "#000000"
 
 # Gaps and Monocle behavior

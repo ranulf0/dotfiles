@@ -1,11 +1,3 @@
-#
-# ~/.bashrc
-#
-
-#if [ -z "$DISPLAY" ] && [ "$XDG_VTNR" = 1 ]; then
-  #exec startx
-#fi
-
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
@@ -15,11 +7,10 @@ alias grep='grep --color=auto --exclude=tags'
 alias ll='ls -lh'
 alias sudo='sudo '
 alias vim='nvim '
+alias v='nvim '
 alias ctagss='ctags -R --exclude={unit_test,unit-test,ut-stubs,macosx,freertos,windows}'
 
 complete -cf sudo
-
-#PS1='[\u@\h \W]\$ '
 
 parse_git_branch() {
     local branch
