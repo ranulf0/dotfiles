@@ -5,6 +5,7 @@ alias ls='ls --color=auto'
 alias grep='grep --color=auto --exclude=tags'
 
 alias ll='ls -lh'
+alias lll='ls -lha'
 alias sudo='sudo '
 alias vim='nvim '
 alias v='nvim '
