@@ -10,6 +10,8 @@ config.font = wezterm.font 'Hack Nerd Font'
 
 config.window_background_opacity = 1.0
 
+config.selection_word_boundary = " \t\n{}[]()\"'`:"
+
 -- config.tab_max_width = 40
 config.tab_bar_at_bottom = true
 config.use_fancy_tab_bar = false
