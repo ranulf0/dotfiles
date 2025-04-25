@@ -6,18 +6,31 @@ return {
       normal = {
         a = { fg = '#1e1e2e', bg = '#89b4fa' },
         b = { fg = '#cdd6f4', bg = '#45475a' },
-        c = { fg = '#cdd6f4', bg = '#313244' },
+        c = { fg = '#cdd6f4', bg = '#212121' },
       },
-      insert = { a = { fg = '#1e1e2e', bg = '#a6e3a1' } },
-      visual = { a = { fg = '#1e1e2e', bg = '#cba6f7' } },
-      replace = { a = { fg = '#1e1e2e', bg = '#f38ba8' } },
-      command = { a = { fg = '#1e1e2e', bg = '#fab387' } },
+      insert = {
+        a = { fg = '#1e1e2e', bg = '#a6e3a1' },
+        c = { fg = '#cdd6f4', bg = '#212121' },
+      },
+      visual = {
+        a = { fg = '#1e1e2e', bg = '#cba6f7' },
+        c = { fg = '#cdd6f4', bg = '#212121' },
+      },
+      replace = {
+        a = { fg = '#1e1e2e', bg = '#f38ba8' },
+        c = { fg = '#cdd6f4', bg = '#212121' },
+      },
+      command = {
+        a = { fg = '#1e1e2e', bg = '#fab387' },
+        c = { fg = '#cdd6f4', bg = '#212121' },
+      },
       inactive = {
-        a = { fg = '#cdd6f4', bg = '#1e1e2e' },
-        b = { fg = '#cdd6f4', bg = '#1e1e2e' },
-        c = { fg = '#cdd6f4', bg = '#1e1e2e' },
+        a = { fg = '#cdd6f4', bg = '#212121' },
+        b = { fg = '#cdd6f4', bg = '#212121' },
+        c = { fg = '#cdd6f4', bg = '#212121' },
       },
     }
+
     require('lualine').setup {
       options = {
         theme = bubbles_theme,
