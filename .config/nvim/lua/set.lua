@@ -22,7 +22,6 @@ local configs = {
     signcolumn = "yes",
     --isfname:append("@-@"),
     mouse ='',
-    signcolumn = "no",
     cursorline = true,
     ignorecase = true,
     smartcase = true,
