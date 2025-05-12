@@ -42,7 +42,7 @@ wezterm.on("format-tab-title", function(tab)
     { Foreground = { Color = number_fg } },
     { Text = " " .. tostring(index) .. " " },
 
-    { Background = { Color = "#1e1e2e" } },
+    { Background = { Color = "#212121" } },
     { Foreground = { Color = "#cdd6f4" } },
     { Text = " " .. title .. " " },
   }

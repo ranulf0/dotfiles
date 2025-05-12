@@ -36,6 +36,7 @@ return {
       color_overrides = {},
       custom_highlights = {
         CursorLine = { bg = "#2a2a2e" },
+        LineNr = { fg = "#aaaaaa" },
         ColorColumn = { bg = "#2a2a2e" },
         NvimTreeFolderIcon = { fg = "#cccccc" },
         NvimTreeFolderName = { fg = "#cccccc" },
@@ -46,10 +47,11 @@ return {
         NormalNC = { bg = "#212121" },
         NormalFloat = { bg = "#212121" },
         FloatBorder = { bg = "#212121" },
-        VertSplit = { bg = "#212121" },
         NvimTreeNormal = { fg = "#eeeeee", bg = "#212121" },
         NvimTreeNormalNC = { bg = "#212121" },
         NvimTreeEndOfBuffer = { bg = "#212121" },
+        NvimTreeWinSeparator = { fg = "#212121", bg = "#212121" },
+        TreesitterContextLineNumber = { bg = "#212121", fg = "#aaaaaa" },
       },
       default_integrations = true,
       integrations = {
