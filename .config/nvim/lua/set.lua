@@ -20,13 +20,13 @@ local configs = {
     termguicolors = true,
     scrolloff = 8,
     signcolumn = "yes",
-    --isfname:append("@-@"),
     mouse ='',
     cursorline = true,
     ignorecase = true,
     smartcase = true,
     listchars = {
-        leadmultispace = USER.indent_marker(4),
+      tab = "| ",
+      leadmultispace = USER.indent_marker(4),
     },
     list = true,
 }
