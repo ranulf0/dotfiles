@@ -70,6 +70,10 @@ alt + {1-9,0}
 alt + shift + {1-9,0}
     bspc node -d {1-9,10}
 
+# Rotate windows
+alt + r
+    bspc node @parent --rotate 90
+
 # Restart bspwm
 alt + shift + r
     pkill sxhkd; bspc wm -r; sxhkd &
