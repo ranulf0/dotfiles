@@ -21,7 +21,7 @@ config.show_new_tab_button_in_tab_bar = false
 config.window_padding = { left = 0, right = 0, top = 0, bottom = 0 }
 
 config.colors = {
-  background = "#272727",
+  background = "#000000",
   tab_bar = {
     background = "rgba(0,0,0,0.0)",
   },
