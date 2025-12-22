@@ -30,3 +30,5 @@ local function enable_mouse_resize()
 end
 
 vim.keymap.set("n", "<Leader>r", enable_mouse_resize, { silent = true, noremap = true })
+
+vim.keymap.set("x", "<leader>\\", ":'<,'>EasyAlign */\\\\$/<CR>")
