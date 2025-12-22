@@ -9,8 +9,10 @@ picom -b &
 hsetroot -solid "#000000" &
 xsetroot -cursor_name left_ptr &
 setxkbmap us intl &
+setxkbmap -option lv3:ralt_alt &
+xrandr --dpi 96
 
-xrandr | grep "HDMI-1 connected" && xrandr --output HDMI-1 --mode 3440x1440 --rate 49.95 --primary && xrandr --output eDP-1 --off && xrandr --output eDP-2 --off &
+xrandr | grep "HDMI-0 connected" && xrandr --output HDMI-0 --mode 3440x1440 --rate 49.95 --primary && xrandr --output eDP-1 --off && xrandr --output DP-4 --off
 
 # Start Polybar
 $HOME/.config/polybar/launch.sh &
@@ -22,7 +24,7 @@ nm-applet &
 xss-lock --transfer-sleep-lock -- i3lock -c 000000 --nofork &
 
 # Border settings
-bspc config border_width 1
+bspc config border_width 2
 bspc config normal_border_color "#000000"
 
 # Gaps and Monocle behavior
