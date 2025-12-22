@@ -1,12 +1,9 @@
 return {
   {
-    "zbirenbaum/copilot.lua",
-    cmd = "Copilot",
-    event = "InsertEnter",
-    opts = {
-      suggestion = { enabled = true },
-      panel = { enabled = false },
-    },
+    "github/copilot.vim",
+    config = function()
+      vim.g.copilot_enabled = 1
+    end,
   },
   {
     "CopilotC-Nvim/CopilotChat.nvim",
