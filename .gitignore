@@ -1,3 +1,4 @@
 undodir
 *.token
 lazy-lock.json
+spell/
