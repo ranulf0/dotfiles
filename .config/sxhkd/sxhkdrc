@@ -35,8 +35,6 @@ alt + q
 # Change focus
 alt + {h, j, k, l}
     bspc node -f {west, south, north, east}
-alt + {Left, Down, Up, Right}
-    bspc node -f {west, south, north, east}
 
 # Move focused window
 alt + shift + {h, j, k, l}
