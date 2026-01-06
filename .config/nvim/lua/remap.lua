@@ -12,10 +12,10 @@ vim.keymap.set("x", "<leader>p", [["_dP]])
 vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
 
-vim.keymap.set("n", "<leader>j", ":resize -2 <CR>")
-vim.keymap.set("n", "<leader>k", ":resize +2 <CR>")
-vim.keymap.set("n", "<leader>h", ":vertical resize -2 <CR>")
-vim.keymap.set("n", "<leader>l", ":vertical resize +2 <CR>")
+vim.keymap.set("n", "<C-Up>",    "<C-w>+")
+vim.keymap.set("n", "<C-Down>",  "<C-w>-")
+vim.keymap.set("n", "<C-Left>",  "<C-w><")
+vim.keymap.set("n", "<C-Right>", "<C-w>>")
 
 vim.keymap.set("n", "p", "pg`]")
 
