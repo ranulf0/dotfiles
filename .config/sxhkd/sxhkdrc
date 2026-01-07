@@ -85,6 +85,10 @@ shift + Print
     maim "$HOME/pictures/screenshot-$(date +'%Y-%m-%d_%H-%M-%S').png"
 shift + control + Print
     maim --select "$HOME/pictures/screenshot-$(date +'%Y-%m-%d_%H-%M-%S').png"
+alt + Print
+  maim --window "$(xdotool getactivewindow)" | xclip -selection clipboard -t image/png
+alt + shift + Print
+  maim --window "$(xdotool getactivewindow)" "$HOME/pictures/screenshot-$(date +'%Y-%m-%d_%H-%M-%S').png"
 
 # Browser
 alt + {c, n}
