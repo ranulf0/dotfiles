@@ -16,8 +16,7 @@ alias grep='grep --color=auto --exclude=tags'
 
 alias ll='ls -lh'
 alias sudo='sudo '
-#alias vim='nvim '
-alias ctagss='ctags -R --exclude={unit_test,unit-test,ut-stubs,macosx,freertos,windows}'
+alias v='vim '
 
 complete -cf sudo
 

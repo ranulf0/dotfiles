@@ -9,7 +9,6 @@ alias lll='ls -lha'
 alias sudo='sudo '
 alias vim='nvim '
 alias v='nvim '
-alias ctagss='ctags -R --exclude={unit_test,unit-test,ut-stubs,macosx,freertos,windows}'
 
 complete -cf sudo
 

@@ -1,0 +1,7 @@
+--recurse
+--exclude=unit_test
+--exclude=unit-test
+--exclude=ut-stubs
+--exclude=macosx
+--exclude=freertos
+--exclude=windows
