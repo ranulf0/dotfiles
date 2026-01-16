@@ -29,7 +29,6 @@ for lang,data in pairs (lang_opt) do
     autocmd("FileType", {
       pattern = lang,
       callback = function()
-        vim.opt_local.listchars:append({ leadmultispace = USER.indent_marker(2) })
         vim.opt_local.shiftwidth = 2
         vim.opt_local.tabstop = 2
       end

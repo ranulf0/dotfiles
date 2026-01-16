@@ -24,10 +24,6 @@ local configs = {
     cursorline = true,
     ignorecase = true,
     smartcase = true,
-    listchars = {
-      tab = "| ",
-      leadmultispace = USER.indent_marker(4),
-    },
     list = true,
 }
 
