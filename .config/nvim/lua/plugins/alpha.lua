@@ -5,8 +5,6 @@ return {
     local alpha = require("alpha")
     local dashboard = require("alpha.themes.dashboard")
 
-    -- Dark purple logo
-
     dashboard.section.header.val = {
       "                                                                     ",
       "       ████ ██████           █████      ██                     ",
@@ -40,10 +38,20 @@ return {
       }
     end
 
+    local function vertical_padding()
+      local lines = vim.o.lines
+      local header_height = #dashboard.section.header.val
+      local buttons_height = #dashboard.section.buttons.val + 2
+      local footer_height = 1
+
+      local content_height = header_height + buttons_height + footer_height
+      return math.max(2, math.floor((lines - content_height) / 2))
+    end
+
     dashboard.config.layout = {
-      { type = "padding", val = 10 },
+      { type = "padding", val = vertical_padding },
       dashboard.section.header,
-      { type = "padding", val = 5 },
+      { type = "padding", val = 3 },
       dashboard.section.buttons,
       { type = "padding", val = 1 },
       dashboard.section.footer,
