@@ -2,41 +2,40 @@
 
 pgrep -x sxhkd > /dev/null || sxhkd &
 
+# X / environment
+xrandr --dpi 96
+setxkbmap us intl
+setxkbmap -option lv3:ralt_alt
+xsetroot -cursor_name left_ptr &
+hsetroot -solid "#000000" &
+
+# Display setup
+HDMI=$(xrandr | awk '/^HDMI-[0-9]+ connected/ {print $1; exit}')
+INTERNAL=$(xrandr | awk '/^(eDP|DP)-[0-9]+ connected/ {print $1; exit}')
+if [ -n "$HDMI" ]; then
+  xrandr --output "$HDMI" --preferred --primary
+  [ -n "$INTERNAL" ] && xrandr --output "$INTERNAL" --off
+fi
+
+# Desktops
 bspc monitor -d 1 2 3 4 5 6 7 8 9 10
 
+# Compositor & services
 picom -b &
-
-hsetroot -solid "#000000" &
-xsetroot -cursor_name left_ptr &
-setxkbmap us intl &
-setxkbmap -option lv3:ralt_alt &
-xrandr --dpi 96
-
-xrandr | grep "HDMI-0 connected" && xrandr --output HDMI-0 --mode 3440x1440 --rate 49.95 --primary && xrandr --output eDP-1 --off && xrandr --output DP-4 --off
-
-# Start Polybar
-$HOME/.config/polybar/launch.sh &
-
-# Start NetworkManager applet
 nm-applet &
-
-# Lock screen before suspend
 xss-lock --transfer-sleep-lock -- i3lock -c 000000 --nofork &
 
-# Border settings
+# Polybar
+$HOME/.config/polybar/launch.sh &
+
+# bspwm appearance & behavior
 bspc config border_width 2
 bspc config normal_border_color "#000000"
 
-# Gaps and Monocle behavior
 bspc config window_gap 15
 bspc config borderless_monocle true
 bspc config gapless_monocle true
 
-# Window focus behavior
 bspc config focus_follows_pointer true
-
-# Window splitting
 bspc config split_ratio 0.5
-
-# Move window
 bspc config pointer_modifier mod1
