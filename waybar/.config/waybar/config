@@ -6,6 +6,7 @@
   "modules-left": ["hyprland/workspaces"],
   "modules-center": ["mpris"],
   "modules-right": [
+    "custom/github",
     "cpu",
     "memory",
     "disk",
@@ -81,6 +82,13 @@
     "scroll-interval": 0.2,
     "interval": 2,
     "on-click-right": "",
+  },
+
+  "custom/github": {
+    "exec": "~/.config/github/scripts/waybar.sh",
+    "interval": 5,
+    "return-type": "json",
+    "on-click": "firefox github.com/notifications",
   },
 
 }
