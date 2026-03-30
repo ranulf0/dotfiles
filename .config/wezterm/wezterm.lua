@@ -48,4 +48,6 @@ wezterm.on("format-tab-title", function(tab)
   }
 end)
 
+config.enable_wayland = false
+
 return config

@@ -1,0 +1,86 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 28,
+
+  "modules-left": ["hyprland/workspaces"],
+  "modules-center": ["mpris"],
+  "modules-right": [
+    "cpu",
+    "memory",
+    "disk",
+    "disk#home",
+    "pulseaudio",
+    "battery",
+    "clock",
+    "tray"
+  ],
+
+  "hyprland/workspaces": {
+    "format": "{name}",
+    "on-click": "activate"
+  },
+
+  "cpu": {
+    "format": "CPU {usage}%"
+  },
+
+  "memory": {
+    "format": "RAM {percentage}%"
+  },
+
+  "disk": {
+    "format": "{path} {percentage_free}%",
+    "path": "/"
+  },
+
+  "disk#home": {
+    "format": "/home {percentage_free}%",
+    "path": "/home"
+  },
+
+  "pulseaudio": {
+    "format": "VOL {volume}%",
+    "format-muted": "muted",
+
+    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+    "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +5%",
+    "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -5%"
+  },
+
+  "battery": {
+    "format": "BAT 100%",
+    "format-charging": "+BAT {capacity}% ({time})",
+    "format-discharging": "-BAT {capacity}% ({time})",
+    "states": {
+      "warning": 20
+    }
+  },
+
+  "clock": {
+      "format": "{:%a %m/%d %I:%M %p}",
+      "format-alt": "{:%A %y/%m/%d %I:%M:%S %p}",
+      "interval": 1,
+  },
+
+  "tray": {
+    "spacing": 10
+  },
+
+  "mpris": {
+    "format": "{player_icon} {artist} - {title}",
+    "player-icons": {
+      "spotify": "",
+      "spotatui": "",
+      "spotifyd": "",
+      "firefox": "",
+      "default": ""
+    },
+    "scroll": true,
+    "scroll-step": 1,
+    "scroll-interval": 0.2,
+    "interval": 2,
+    "on-click-right": "",
+  },
+
+}

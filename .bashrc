@@ -40,6 +40,6 @@ kd() {
         cd "$selection"
     else
         # If it's a file, copy the path to clipboard
-        echo -n "$selection" | xclip -selection clipboard
+        echo -n "$selection" | wl-copy
     fi
 }

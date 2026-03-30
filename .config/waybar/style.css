@@ -1,0 +1,50 @@
+* {
+  font-family: monospace;
+  font-size: 11pt;
+  font-weight: bold;
+}
+
+window#waybar {
+  background: #000000;
+  color: #ffffff;
+}
+
+/* Workspaces */
+#workspaces button {
+  padding: 0 8px;
+  color: #777777;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+#workspaces button.active {
+  color: #ffffff;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+/* Optional hover */
+#workspaces button:hover {
+  color: #ffffff;
+}
+
+/* Modules */
+#cpu,
+#memory,
+#disk,
+#pulseaudio,
+#battery,
+#clock {
+  padding: 0 10px;
+}
+
+/* Tray */
+#tray {
+  padding-right: 10px;
+}
+
+#mpris.paused {
+  color: #777777;
+}
