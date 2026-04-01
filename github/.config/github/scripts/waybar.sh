@@ -7,7 +7,6 @@ DATA=$(github_fetch)
 COUNT=$(echo "$DATA" | jq 'length')
 
 if [ "$COUNT" -eq 0 ]; then
-    echo '{"text": "GIT", "tooltip": "No notifications"}'
     exit 0
 fi
 
