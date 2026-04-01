@@ -54,7 +54,8 @@
     "format-charging": "+BAT {capacity}% ({time})",
     "format-discharging": "-BAT {capacity}% ({time})",
     "states": {
-      "warning": 20
+      "warning": 20,
+      "critical": 10
     }
   },
 

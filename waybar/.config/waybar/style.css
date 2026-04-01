@@ -40,6 +40,18 @@ window#waybar {
   padding: 0 10px;
 }
 
+#battery {
+  color: #ffffff;
+}
+
+#battery.warning {
+  color: #f1c40f;
+}
+
+#battery.critical {
+  color: #e74c3c;
+}
+
 /* Tray */
 #tray {
   padding-right: 10px;
