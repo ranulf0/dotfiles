@@ -12,8 +12,10 @@ if [ "$MODE" = "internal" ]; then
 fi
 
 if [ "$MODE" = "hdmi" ]; then
-    [ -n "$HDMI" ] && hyprctl keyword monitor "$HDMI,preferred,0x0,1"
-    [ -n "$INTERNAL" ] && hyprctl keyword monitor "$INTERNAL,disable"
+    if [ -n "$HDMI" ]; then
+        hyprctl keyword monitor "$HDMI,preferred,0x0,1"
+        hyprctl keyword monitor "$INTERNAL,disable"
+    fi
     exit 0
 fi
 
