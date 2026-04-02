@@ -63,6 +63,7 @@
       "format": "{:%a %m/%d %I:%M %p}",
       "format-alt": "{:%A %y/%m/%d %I:%M:%S %p}",
       "interval": 1,
+      "tooltip-format": "<tt>{calendar}</tt>"
   },
 
   "tray": {
