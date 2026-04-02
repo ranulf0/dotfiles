@@ -5,8 +5,9 @@
 }
 
 window#waybar {
-  background: #000000;
+  background: rgba(0, 0, 0, 0.15);
   color: #ffffff;
+  border-radius: 10px;
 }
 
 /* Workspaces */
