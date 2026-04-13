@@ -76,9 +76,9 @@
       "spotify": "",
       "spotatui": "",
       "spotifyd": "",
-      "firefox": "",
       "default": ""
     },
+    "ignored-players": ["firefox"],
     "scroll": true,
     "scroll-step": 1,
     "scroll-interval": 0.2,
