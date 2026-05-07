@@ -26,15 +26,13 @@ return {
       dashboard.button("q", "󰗼  Quit",         ":qa<CR>"),
     }
 
+    vim.api.nvim_set_hl(0, "AlphaFooter", { fg = "#a6e3a1", })
+    dashboard.section.footer.opts.hl = "AlphaFooter"
     dashboard.section.footer.val = function()
-      local stats = require("lazy").stats()
       return {
-        string.format(
-          "⚡ Neovim loaded %d/%d plugins in %.2fms",
-          stats.loaded,
-          stats.count,
-          stats.startuptime
-        )
+        "NVIM " .. vim.version().major
+        .. "." .. vim.version().minor
+        .. "." .. vim.version().patch
       }
     end
 
