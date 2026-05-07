@@ -25,6 +25,9 @@ local configs = {
     ignorecase = true,
     smartcase = true,
     list = true,
+    showmode = false,
+    cmdheight = 0,
+    fillchars = { eob = " ", }
 }
 
 for key,val in pairs (configs) do
