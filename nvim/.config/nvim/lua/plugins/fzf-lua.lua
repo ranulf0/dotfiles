@@ -26,5 +26,9 @@ return {
     vim.keymap.set("n", "<leader>R", fzf.oldfiles,    {})
     vim.keymap.set("n", "<leader>B", fzf.buffers,     {})
     vim.keymap.set("n", "<leader>Q", fzf.quickfix,    {})
+    vim.keymap.set("n", "<leader>L", "<cmd>Lazy<CR>", {})
+    vim.keymap.set("n", "<leader>C", function()
+      fzf.files({ cwd = vim.fn.stdpath("config") })
+    end, {})
   end,
 }
