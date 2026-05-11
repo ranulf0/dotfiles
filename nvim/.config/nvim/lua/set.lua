@@ -26,7 +26,6 @@ local configs = {
     smartcase = true,
     list = true,
     showmode = false,
-    cmdheight = 0,
     fillchars = { eob = " ", }
 }
 
