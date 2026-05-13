@@ -9,6 +9,7 @@ alias lll='ls -lha'
 alias sudo='sudo '
 alias vim='nvim '
 alias v='nvim '
+alias t='tmux'
 
 complete -cf sudo
 
