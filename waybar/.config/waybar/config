@@ -7,7 +7,6 @@
   "modules-center": ["mpris"],
   "modules-right": [
     "custom/github",
-    "temperature",
     "cpu",
     "memory",
     "disk",
@@ -92,10 +91,6 @@
     "interval": 5,
     "return-type": "json",
     "on-click": "firefox github.com/notifications",
-  },
-
-  "temperature": {
-      "format": "TEMP {temperatureC}°C"
   },
 
 }

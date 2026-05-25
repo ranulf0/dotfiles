@@ -32,7 +32,6 @@ window#waybar {
 }
 
 /* Modules */
-#temperature,
 #cpu,
 #memory,
 #disk,
