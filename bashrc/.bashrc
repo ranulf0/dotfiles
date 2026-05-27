@@ -44,3 +44,7 @@ kd() {
         echo -n "$selection" | wl-copy
     fi
 }
+
+rebase() {
+    git rebase -i HEAD~"$1"
+}
