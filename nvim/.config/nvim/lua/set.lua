@@ -26,7 +26,10 @@ local configs = {
     smartcase = true,
     list = true,
     showmode = false,
-    fillchars = { eob = " ", }
+    fillchars = { eob = " ", },
+    foldmethod = "expr",
+    foldexpr = "v:lua.vim.treesitter.foldexpr()",
+    foldlevel = 99,
 }
 
 for key,val in pairs (configs) do
