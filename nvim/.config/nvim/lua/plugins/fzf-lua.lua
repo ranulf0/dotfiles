@@ -30,5 +30,8 @@ return {
     vim.keymap.set("n", "<leader>C", function()
       fzf.files({ cwd = vim.fn.stdpath("config") })
     end, {})
+    vim.keymap.set("n", "<leader>D", function()
+      fzf.files({ cwd = vim.fn.expand("~/.dotfiles") })
+    end, {})
   end,
 }
