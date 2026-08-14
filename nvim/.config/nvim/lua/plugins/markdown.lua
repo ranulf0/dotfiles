@@ -6,7 +6,7 @@ return {
       "MarkdownPreview",
       "MarkdownPreviewStop",
     },
-    build = "cd app && npm install",
+    build = "cd app && yarn install",
     init = function()
       vim.g.mkdp_filetypes = { "markdown" }
     end,
