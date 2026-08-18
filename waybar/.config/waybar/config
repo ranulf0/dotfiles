@@ -50,9 +50,9 @@
   },
 
   "battery": {
-    "format": "BAT 100%",
-    "format-charging": "+BAT {capacity}%",
-    "format-discharging": "-BAT {capacity}%",
+    "format": "BAT Full",
+    "format-charging": "BAT {capacity}%",
+    "format-discharging": "BAT {capacity}%",
     "states": {
       "warning": 20,
       "critical": 10
