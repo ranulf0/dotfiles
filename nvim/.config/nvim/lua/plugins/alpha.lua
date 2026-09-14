@@ -21,8 +21,7 @@ return {
       dashboard.button("n", "  New File",     ":ene | startinsert<CR>"),
       dashboard.button("g", "  Find Text",    ":FzfLua live_grep<CR>"),
       dashboard.button("r", "  Recent Files", ":FzfLua oldfiles<CR>"),
-      dashboard.button("c", "  Config",       ":FzfLua files cwd=~/.config/nvim<CR>"),
-      dashboard.button(".", ".  Dotfiles",     ":FzfLua files cwd=~/dotfiles<CR>"),
+      dashboard.button("c", "  Config",       ":FzfLua files cwd=~/dotfiles<CR>"),
       dashboard.button("L", "󰒲  Lazy",         ":Lazy<CR>"),
       dashboard.button("q", "󰗼  Quit",         ":qa<CR>"),
     }

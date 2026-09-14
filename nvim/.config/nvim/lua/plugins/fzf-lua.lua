@@ -28,10 +28,7 @@ return {
     vim.keymap.set("n", "<leader>Q", fzf.quickfix,    {})
     vim.keymap.set("n", "<leader>L", "<cmd>Lazy<CR>", {})
     vim.keymap.set("n", "<leader>C", function()
-      fzf.files({ cwd = vim.fn.stdpath("config") })
-    end, {})
-    vim.keymap.set("n", "<leader>D", function()
-      fzf.files({ cwd = vim.fn.expand("~/.dotfiles") })
+      fzf.files({ cwd = vim.fn.expand("~/dotfiles") })
     end, {})
   end,
 }
