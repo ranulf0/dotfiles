@@ -23,11 +23,19 @@
   },
 
   "cpu": {
-    "format": "CPU {usage}%"
+    "format": "CPU {usage}%",
+    "states": {
+        "warning": 70,
+        "critical": 90
+    }
   },
 
   "memory": {
-    "format": "RAM {percentage}%"
+      "format": "RAM {percentage}%",
+      "states": {
+          "warning": 70,
+          "critical": 90
+      }
   },
 
   "disk": {
@@ -50,22 +58,28 @@
   },
 
   "battery": {
-    "format": "BAT Full",
-    "format-charging": "BAT {capacity}%",
-    "format-discharging": "BAT {capacity}%",
+    "format": "BAT {capacity}%",
     "states": {
       "warning": 20,
       "critical": 10
     }
   },
 
-  "clock": {
-      "format": "{:%a %m/%d %I:%M %p}",
-      "format-alt": "{:%A %y/%m/%d %I:%M:%S %p}",
-      "interval": 1,
-      "tooltip-format": "<tt>{calendar}</tt>"
-  },
+"clock": {
+    "format": "{:%a %m/%d %I:%M %p}",
+    "format-alt": "{:%A %y/%m/%d %I:%M:%S %p}",
+    "interval": 1,
+    "tooltip-format": "<tt>{calendar}</tt>",
 
+    "calendar": {
+        "format": {
+            "days": "<span color='#777777'>{}</span>",
+            "today": "<span color='#ffffff'><b>{}</b></span>",
+            //"months": "<span color='#ffffff'>{}</span>",
+            //"weekdays": "<span color='#ffffff'>{}</span>",
+        }
+    }
+},
   "tray": {
     "spacing": 10
   },

@@ -41,6 +41,16 @@ window#waybar {
   padding: 0 10px;
 }
 
+#cpu.warning,
+#memory.warning {
+    color: #f9e2af;
+}
+
+#cpu.critical,
+#memory.critical {
+    color: #f38ba8;
+}
+
 #battery {
   color: #ffffff;
 }
@@ -51,6 +61,11 @@ window#waybar {
 
 #battery.critical {
   color: #e74c3c;
+}
+
+#battery.charging,
+#battery.plugged {
+    color: #89b4fa;
 }
 
 /* Tray */
