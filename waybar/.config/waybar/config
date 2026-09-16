@@ -3,8 +3,8 @@
   "position": "top",
   "height": 28,
 
-  "modules-left": ["hyprland/workspaces"],
-  "modules-center": ["mpris"],
+  "modules-left": ["mpris"],
+  "modules-center": ["hyprland/workspaces"],
   "modules-right": [
     "custom/github",
     "cpu",
@@ -19,7 +19,8 @@
 
   "hyprland/workspaces": {
     "format": "{name}",
-    "on-click": "activate"
+    "on-click": "activate",
+    "tooltip": false
   },
 
   "cpu": {
