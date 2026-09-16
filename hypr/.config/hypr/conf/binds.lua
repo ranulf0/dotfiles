@@ -33,6 +33,8 @@ hl.bind(mod .. " + F", hl.dsp.window.fullscreen())
 hl.bind(mod .. " + SHIFT + SPACE", hl.dsp.window.float())
 hl.bind(mod .. " + SPACE", hl.dsp.window.cycle_next({ tiled = true }))
 
+hl.bind(mod .. " + W", hl.dsp.exec_cmd("pkill -SIGUSR1 waybar"))
+
 
 -- Workspaces
 
