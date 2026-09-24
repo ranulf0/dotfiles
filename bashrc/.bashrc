@@ -11,6 +11,7 @@ alias s='sudo '
 alias vim='nvim '
 alias v='nvim '
 alias t='tmux'
+alias pls='sudo $(fc -ln -1)'
 
 complete -cf sudo
 
