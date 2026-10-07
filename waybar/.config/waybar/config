@@ -54,6 +54,8 @@
     "format-muted": "muted",
 
     "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+    "on-click-right": "kitty --class wiremix -e wiremix",
+
     "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +5%",
     "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -5%"
   },
@@ -86,19 +88,17 @@
   },
 
   "mpris": {
-    "format": "{player_icon} {artist} - {title}",
+    "format": "<span size='120%' rise='-3000' color='#ffffff'>{player_icon}</span> <span color='#888888'>{artist}</span> - {title}",
+
     "player-icons": {
-      "spotify": "",
-      "spotatui": "",
-      "spotifyd": "",
-      "default": ""
+        "spotify": "",
+        "spotatui": "",
+        "spotifyd": "",
+        "default": "󰎆"
     },
-    "ignored-players": ["firefox"],
-    "scroll": true,
-    "scroll-step": 1,
-    "scroll-interval": 0.2,
-    "interval": 2,
-    "on-click-right": "",
+
+    "on-click": "playerctl play-pause",
+    "interval": 1
   },
 
   "custom/github": {
