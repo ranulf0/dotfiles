@@ -3,15 +3,18 @@
 source "$HOME/.config/github/scripts/common.sh"
 
 DATA=$(github_fetch)
+COUNT=$(jq 'length' <<< "$DATA")
 
-COUNT=$(echo "$DATA" | jq 'length')
-
-if [ "$COUNT" -eq 0 ]; then
+if (( COUNT == 0 )); then
+    printf '{"text":"","tooltip":""}\n'
     exit 0
 fi
 
-TOOLTIP=$(echo "$DATA" | jq -r '
-  .[] | "• \(.repository.full_name) [" + .reason + "]"
-' | sed ':a;N;$!ba;s/\n/\\n/g')
+TOOLTIP=$(jq -r '
+    .[] | "• \(.repository.full_name) [\(.reason)]"
+' <<< "$DATA")
 
-echo "{\"text\": \"GIT $COUNT\", \"tooltip\": \"$TOOLTIP\"}"
+jq -cn \
+    --arg text "GIT $COUNT" \
+    --arg tooltip "$TOOLTIP" \
+    '{text: $text, tooltip: $tooltip}'
