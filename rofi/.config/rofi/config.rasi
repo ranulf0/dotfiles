@@ -1,4 +1,127 @@
+* {
+    background:     #0b070b;
+    foreground:     #cdd6f4;
+    border-color:   #f9e2af;
 
-//@theme "/usr/share/rofi/themes/android_notification.rasi"
+    selected-bg:    #2a2a2a;
+    selected-fg:    #ffffff;
 
-@theme "/usr/share/rofi/themes/Arc-Dark.rasi"
+    background-color: transparent;
+    text-color: @foreground;
+
+    margin: 0;
+    padding: 0;
+    spacing: 0;
+}
+
+window {
+    width: 760px;
+
+    background-color: @background;
+
+    border: 2px;
+    border-color: @border-color;
+    border-radius: 12px;
+
+    padding: 6px;
+}
+
+mainbox {
+    background-color: transparent;
+    spacing: 0px;
+}
+
+inputbar {
+    background-color: transparent;
+
+    padding: 6px 4px 8px 4px;
+
+    border: 0px;
+
+    spacing: 6px;
+}
+
+prompt {
+    text-color: #89b4fa;
+    background-color: transparent;
+}
+
+entry {
+    text-color: @foreground;
+    background-color: transparent;
+
+    placeholder: "Search...";
+    placeholder-color: #6c7086;
+
+    cursor: text;
+}
+
+case-indicator {
+    text-color: @foreground;
+}
+
+listview {
+    background-color: transparent;
+
+    lines: 18;
+    columns: 1;
+
+    spacing: 1px;
+
+    scrollbar: false;
+
+    border: 1px 0px 0px 0px;
+    border-color: #6c7086;
+
+    padding: 8px 4px 4px 4px;
+}
+
+element {
+    background-color: transparent;
+    text-color: @foreground;
+
+    padding: 3px 6px;
+
+    border: 0px;
+    border-radius: 6px;
+
+    spacing: 6px;
+}
+
+element normal.normal,
+element normal.active,
+element normal.urgent {
+    background-color: transparent;
+    text-color: @foreground;
+}
+
+element selected.normal,
+element selected.active,
+element selected.urgent {
+    background-color: @selected-bg;
+    text-color: @selected-fg;
+}
+
+element alternate.normal,
+element alternate.active,
+element alternate.urgent {
+    background-color: transparent;
+    text-color: @foreground;
+}
+
+element-icon {
+    size: 18px;
+    background-color: transparent;
+}
+
+element-text {
+    background-color: transparent;
+    text-color: inherit;
+    vertical-align: 0.5;
+}
+
+scrollbar {
+    width: 2px;
+    background-color: #313244;
+    handle-color: #6c7086;
+}
