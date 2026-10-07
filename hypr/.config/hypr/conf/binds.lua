@@ -94,16 +94,21 @@ hl.bind("XF86AudioMicMute", hl.dsp.exec_cmd( "pactl set-source-mute @DEFAULT_SOU
 
 -- Media
 
-hl.bind("XF86AudioPlay", hl.dsp.exec_cmd("playerctl play-pause"))
-hl.bind("XF86AudioPause", hl.dsp.exec_cmd("playerctl play-pause"))
-hl.bind("XF86AudioNext", hl.dsp.exec_cmd("playerctl next"))
-hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"))
+hl.bind("XF86AudioPlay", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true})
+hl.bind("XF86AudioPause", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true})
+hl.bind("XF86AudioNext", hl.dsp.exec_cmd("playerctl next"), { locked = true})
+hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"), { locked = true})
 
 
 -- Brightness
 
 hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("brightnessctl set +5%"), { repeating = true })
 hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl set 5%-"), { repeating = true })
+
+
+-- Temperature
+
+hl.bind(mod .. " + SHIFT + S", hl.dsp.exec_cmd("pgrep -x hyprsunset >/dev/null && pkill hyprsunset || hyprsunset -t 4500 >/dev/null 2>&1 &"))
 
 
 -- Screenshots
@@ -139,9 +144,14 @@ end)
 
 -- Lock
 
-hl.bind("SUPER + L", hl.dsp.exec_cmd("hyprlock"))
+hl.bind("SUPER + L", hl.dsp.exec_cmd("~/.config/hypr/generate-hyprlock-clocks.sh; hyprlock"))
 
 
 -- GitHub notifications
 
-hl.bind("ALT + G", hl.dsp.exec_cmd( "~/.config/github/scripts/rofi.sh"))
+hl.bind(mod ..  " + G", hl.dsp.exec_cmd( "~/.config/github/scripts/rofi.sh"))
+
+
+-- Wallpaper
+
+hl.bind(mod ..  " + SHIFT + W", hl.dsp.exec_cmd("~/.config/hypr/scripts/wallpaper.sh"))

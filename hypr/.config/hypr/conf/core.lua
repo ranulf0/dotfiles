@@ -2,7 +2,7 @@ hl.config({
     input = {
         kb_layout = "us",
         kb_variant = "intl",
-        kb_options = "lv3:ralt_alt",
+        kb_options = "lv3:ralt_alt,caps:escape",
         follow_mouse = 1,
 
         touchpad = {
@@ -42,6 +42,15 @@ hl.config({
         rounding = 11,
         active_opacity = 1.0,
         inactive_opacity = 1.0,
+
+        shadow = {
+          enabled = true,
+          range = 8,
+          render_power = 2,
+
+          color = "rgba(00000088)",
+          color_inactive = "rgba(00000000)",
+        },
 
         blur = {
             enabled = false,
