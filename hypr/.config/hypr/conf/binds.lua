@@ -1,6 +1,53 @@
 local mod = "ALT"
 
 
+-- Helper functions
+
+local function move_window(direction)
+    return function()
+        local window = hl.get_active_window()
+        local gaps = hl.get_config("general.gaps_out")
+
+        hl.dispatch(hl.dsp.window.move({ direction = direction }))
+
+        if window and window.floating then
+            local offsets = {
+                l = { gaps.left, 0 },
+                r = { -gaps.right, 0 },
+                u = { 0, gaps.top },
+                d = { 0, -gaps.bottom },
+            }
+
+            local offset = offsets[direction]
+
+            hl.dispatch(hl.dsp.window.move({
+                x = offset[1],
+                y = offset[2],
+                relative = true,
+                window = window,
+            }))
+        end
+    end
+end
+
+local function cycle_window(next)
+    return function()
+        hl.dispatch(hl.dsp.window.cycle_next({ next = next }))
+        hl.dispatch(hl.dsp.window.bring_to_top())
+    end
+end
+
+local function toggle_keyboard_layout()
+    local variant = hl.get_config("input.kb_variant")
+
+    hl.config({
+        input = {
+            kb_variant = variant == "intl" and "" or "intl",
+        },
+    })
+end
+
+
 -- Applications
 
 hl.bind(mod .. " + RETURN", hl.dsp.exec_cmd("kitty"))
@@ -24,27 +71,27 @@ hl.bind(mod .. " + SHIFT + L", hl.dsp.window.swap({ direction = "r" }))
 hl.bind(mod .. " + SHIFT + K", hl.dsp.window.swap({ direction = "u" }))
 hl.bind(mod .. " + SHIFT + J", hl.dsp.window.swap({ direction = "d" }))
 
-hl.bind(mod .. " + CTRL + H", hl.dsp.window.move({ direction = "l" }))
-hl.bind(mod .. " + CTRL + L", hl.dsp.window.move({ direction = "r" }))
-hl.bind(mod .. " + CTRL + K", hl.dsp.window.move({ direction = "u" }))
-hl.bind(mod .. " + CTRL + J", hl.dsp.window.move({ direction = "d" }))
+hl.bind(mod .. " + CTRL + H", move_window("l"))
+hl.bind(mod .. " + CTRL + L", move_window("r"))
+hl.bind(mod .. " + CTRL + K", move_window("u"))
+hl.bind(mod .. " + CTRL + J", move_window("d"))
 
 hl.bind(mod .. " + F", hl.dsp.window.fullscreen())
 hl.bind(mod .. " + SHIFT + SPACE", hl.dsp.window.float())
-hl.bind(mod .. " + SPACE", hl.dsp.window.cycle_next({ tiled = true }))
+
+hl.bind(mod .. " + TAB", cycle_window(true), { repeating = true })
+hl.bind(mod .. " + SHIFT + TAB", cycle_window(false), { repeating = true })
 
 hl.bind(mod .. " + W", hl.dsp.exec_cmd("pkill -SIGUSR1 waybar"))
 
 
 -- Workspaces
 
-for i = 1, 9 do
-    hl.bind(mod .. " + " .. i, hl.dsp.focus({ workspace = i }))
-    hl.bind(mod .. " + SHIFT + " .. i, hl.dsp.window.move({ workspace = i, follow = false, }))
+for i = 1, 10 do
+    local key = i % 10
+    hl.bind(mod .. " + " .. key, hl.dsp.focus({ workspace = i }))
+    hl.bind(mod .. " + SHIFT + " .. key, hl.dsp.window.move({ workspace = i, follow = false }))
 end
-
-hl.bind(mod .. " + 0", hl.dsp.focus({ workspace = 10 }))
-hl.bind(mod .. " + SHIFT + 0", hl.dsp.window.move({ workspace = 10, follow = false, }))
 
 hl.bind(mod .. " + B", hl.dsp.focus({ workspace = 217 }))
 hl.bind(mod .. " + SHIFT + B", hl.dsp.window.move({ workspace = 217, follow = false, }))
@@ -123,23 +170,7 @@ hl.bind(mod .. " + SHIFT + Print", hl.dsp.exec_cmd( "grimblast save active ~/Pic
 
 -- Keyboard layout toggle
 
-hl.bind("SUPER + SPACE", function()
-    local variant = hl.get_config("input.kb_variant")
-
-    if variant == "intl" then
-        hl.config({
-            input = {
-                kb_variant = "",
-            },
-        })
-    else
-        hl.config({
-            input = {
-                kb_variant = "intl",
-            },
-        })
-    end
-end)
+hl.bind("SUPER + SPACE", toggle_keyboard_layout)
 
 
 -- Lock
