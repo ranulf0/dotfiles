@@ -86,7 +86,7 @@ window#waybar {
   color: #89b4fa;
 }
 
-#battery.unplugged {
+#battery.full {
   color: #777777;
 }
 
